@@ -1,13 +1,40 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Pong Game</title> 
-    <link rel="stylesheet" href="style.css"> 
-</head> 
-<body> 
-    <canvas id="gameCanvas" width="800" height="600"></canvas> 
-    <script src="game.js"></script> 
-</body> 
-</html> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Neon Pong - Ultimate Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente futurista -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>NEON <span class="highlight">PONG</span></h1>
+            <div class="score-board">
+                <div class="score-box">PUNTOS: <span id="playerScore">0</span></div>
+                <div class="lives-box">VIDAS: <span id="playerLives">❤️ ❤️ ❤️</span></div>
+                <div class="score-box">MODO: <span id="gameMode">MULTIBALL</span></div>
+            </div>
+        </header>
+        
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            <div id="uiOverlay" class="overlay">
+                <div class="overlay-content">
+                    <h2>CYBER PONG 2026</h2>
+                    <p>Usa las teclas <strong>W / S</strong> o las <strong>Flechas Arriba / Abajo</strong> para mover tu paleta.</p>
+                    <p>¡Evita que las pelotas pasen por tu lado izquierdo y sobrevive al modo multipelota!</p>
+                    <button id="startBtn">INICIAR JUEGO</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="game-footer">
+            <p>Instituto Tecnológico de Pachuca • Ingeniería en Sistemas Computacionales</p>
+        </footer>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

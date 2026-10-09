@@ -1,5 +1,8 @@
+/* Diseño general y estética Cyberpunk / Synthwave */
+* {
+    box-sizing: border-box;
+}
 
-/* Diseño general de la página */
 body {
     display: flex;
     justify-content: center;
@@ -7,54 +10,124 @@ body {
     min-height: 100vh;
     margin: 0;
     overflow: hidden;
-
-    /* Fondo espacial azul y morado */
-    background:
-        radial-gradient(
-            ellipse at 15% 20%,
-            rgba(0, 225, 255, 0.35),
-            transparent 35%
-        ),
-        radial-gradient(
-            ellipse at 85% 75%,
-            rgba(190, 0, 255, 0.4),
-            transparent 40%
-        ),
-        linear-gradient(
-            135deg,
-            #071447,
-            #172b85,
-            #401078,
-            #080d35
-        );
-
-    font-family: Arial, sans-serif;
+    background: 
+        radial-gradient(ellipse at 15% 20%, rgba(0, 225, 255, 0.25), transparent 40%),
+        radial-gradient(ellipse at 85% 75%, rgba(190, 0, 255, 0.3), transparent 45%),
+        linear-gradient(135deg, #050b2e, #0f174a, #2a085c, #03061c);
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
 }
 
-/* Área de juego */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.game-header {
+    text-align: center;
+    width: 100%;
+}
+
+.game-header h1 {
+    margin: 0 0 8px 0;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+}
+
+.highlight {
+    color: #ff007f;
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    padding: 10px 20px;
+    background: rgba(10, 15, 45, 0.75);
+    border: 2px solid #00e5ff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.canvas-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 35px rgba(190, 0, 255, 0.5), inset 0 0 20px rgba(0, 229, 255, 0.2);
+    border: 3px solid #be00ff;
+}
+
 canvas {
     display: block;
-    max-width: 95vw;
-    max-height: 90vh;
-    height: auto;
+    background: #02040f;
+}
 
-    border: 2px solid rgba(100, 230, 255, 0.8);
-    border-radius: 12px;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 4, 15, 0.88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
 
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(45, 95, 210, 0.25),
-            transparent 65%
-        ),
-        linear-gradient(
-            145deg,
-            rgba(9, 22, 75, 0.94),
-            rgba(35, 12, 85, 0.94)
-        );
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
 
-    box-shadow:
-        0 0 15px rgba(0, 225, 255, 0.35),
-        0 0 45px rgba(100, 40, 255, 0.25),
-        inset 0 0 30px rgba(50, 100, 255, 0.12);
+.overlay-content {
+    text-align: center;
+    padding: 30px;
+    max-width: 500px;
+}
+
+.overlay-content h2 {
+    font-size: 2.3rem;
+    color: #00e5ff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px #00e5ff;
+}
+
+.overlay-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #b8c1ec;
+    margin-bottom: 25px;
+}
+
+#startBtn {
+    background: linear-gradient(135deg, #00e5ff, #be00ff);
+    color: #fff;
+    border: none;
+    padding: 14px 35px;
+    font-size: 1.1rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+#startBtn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px #ff007f, 0 0 40px #00e5ff;
+}
+
+.game-footer {
+    font-size: 0.8rem;
+    color: #8b9bb4;
+    letter-spacing: 1px;
 }
