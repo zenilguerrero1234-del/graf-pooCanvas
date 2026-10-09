@@ -1,11 +1,60 @@
-    body { 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        height: 100vh; 
-        background-color: #333; 
-    } 
-    
-    canvas { 
-        border: 2px solid #fff; 
-    } 
+
+/* Diseño general de la página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+
+    /* Fondo espacial azul y morado */
+    background:
+        radial-gradient(
+            ellipse at 15% 20%,
+            rgba(0, 225, 255, 0.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 85% 75%,
+            rgba(190, 0, 255, 0.4),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #071447,
+            #172b85,
+            #401078,
+            #080d35
+        );
+
+    font-family: Arial, sans-serif;
+}
+
+/* Área de juego */
+canvas {
+    display: block;
+    max-width: 95vw;
+    max-height: 90vh;
+    height: auto;
+
+    border: 2px solid rgba(100, 230, 255, 0.8);
+    border-radius: 12px;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(45, 95, 210, 0.25),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(9, 22, 75, 0.94),
+            rgba(35, 12, 85, 0.94)
+        );
+
+    box-shadow:
+        0 0 15px rgba(0, 225, 255, 0.35),
+        0 0 45px rgba(100, 40, 255, 0.25),
+        inset 0 0 30px rgba(50, 100, 255, 0.12);
+}
